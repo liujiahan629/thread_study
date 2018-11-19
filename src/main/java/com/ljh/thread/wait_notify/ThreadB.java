@@ -8,7 +8,7 @@ package com.ljh.thread.wait_notify;
  * @Created on 2018/11/5
  * @ModifiedBy:
  */
-public class ThreadB extends Thread{
+public class ThreadB extends Thread implements  Runnable{
     private Object lock;
 
     public ThreadB(Object lock) {
@@ -28,6 +28,7 @@ public class ThreadB extends Thread{
                     }
                     System.out.println("添加了" + (i + 1) + "个元素!");
                     Thread.sleep(1000);
+                    stop();
                 }
             }
         } catch (InterruptedException e) {
