@@ -57,21 +57,21 @@ public class ForkJoinThreadPoolDemo extends RecursiveTask<Long> {
 
     //结果199990000
     public static void main(String[] args) {
-//        ForkJoinPool forkJoinPool = new ForkJoinPool();
-//        ForkJoinThreadPoolDemo task = new ForkJoinThreadPoolDemo(0, 20000);
-//        ForkJoinTask<Long> result = forkJoinPool.submit(task);
-//
-//        try {
-//            long res = result.get();
-//            System.out.println("结果" + res);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        } catch (ExecutionException e) {
-//            e.printStackTrace();
-//        }
+        ForkJoinPool forkJoinPool = new ForkJoinPool();
+        ForkJoinThreadPoolDemo task = new ForkJoinThreadPoolDemo(0, 20000);
+        ForkJoinTask<Long> result = forkJoinPool.submit(task);
 
-        Integer userId=1231232;
-        System.out.println(userId.hashCode()%5);
+        try {
+            long res = result.get();
+            System.out.println("结果" + res);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+//        Integer userId=1231232;
+//        System.out.println(userId.hashCode()%5);
 
     }
 }
